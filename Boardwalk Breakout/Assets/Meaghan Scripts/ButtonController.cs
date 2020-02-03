@@ -6,20 +6,24 @@ public class ButtonController : MonoBehaviour
 {
     public GameObject door;
     private bool pressed;
+    public int numPlushReq;
+    private int numPlush = 0;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Plushie")
         {
             pressed = true;
+            numPlush++;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Plushie")
         {
             pressed = false;
+            numPlush--;
         }
     }
 
@@ -32,7 +36,7 @@ public class ButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pressed)
+        if (pressed && numPlush == numPlushReq)
         {
             door.transform.localRotation = Quaternion.Slerp(door.transform.localRotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * 2);
         }
