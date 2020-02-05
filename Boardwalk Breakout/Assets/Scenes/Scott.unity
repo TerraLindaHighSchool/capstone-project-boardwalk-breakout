@@ -307,7 +307,7 @@ MonoBehaviour:
   jump: {x: 0, y: 0, z: 0}
   jumpForce: 2
   speed: 7
-  rotationSpeed: 3
+  rotationSpeed: 7
 --- !u!114 &534335538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc45752e3bf0d04bb176e6109040fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kiddos: []
+  offset: 2
 --- !u!1 &1106350572
 GameObject:
   m_ObjectHideFlags: 0
