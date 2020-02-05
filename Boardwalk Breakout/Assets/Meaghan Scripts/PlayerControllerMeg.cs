@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerMeg : MonoBehaviour
 {
     public Vector3 jump;
     public float jumpForce = 2.0f;
