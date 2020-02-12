@@ -7,7 +7,7 @@ TagManager:
   - Ground
   - Object001
   - DoorButton
-  - Kiddo
+  - Plushie
   layers:
   - Default
   - TransparentFX
