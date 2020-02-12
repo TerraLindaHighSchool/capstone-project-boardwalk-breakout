@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
     }
 
+    private Vector3 pos;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
 
-        Vector3 pos = transform.position;
+        pos = transform.position;
 
         if (Input.GetKey("w"))
         {
