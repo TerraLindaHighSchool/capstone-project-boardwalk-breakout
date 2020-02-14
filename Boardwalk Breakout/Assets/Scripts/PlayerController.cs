@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
     }
 
+    private Vector3 pos;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -41,28 +43,26 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-            transform.Rotate(0, -rotationSpeed, 0);
-
-        if (Input.GetKey(KeyCode.RightArrow))
-            transform.Rotate(0, rotationSpeed, 0);
-
-        Vector3 pos = transform.position;
+        pos = transform.position;
 
         if (Input.GetKey("w"))
         {
+            this.transform.localRotation = Quaternion.Slerp(this.transform.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * rotationSpeed);
             pos.z += speed * Time.deltaTime;
         }
         if (Input.GetKey("s"))
         {
+            this.transform.localRotation = Quaternion.Slerp(this.transform.localRotation, Quaternion.Euler(0, 180, 0), Time.deltaTime * rotationSpeed);
             pos.z -= speed * Time.deltaTime;
         }
         if (Input.GetKey("d"))
         {
+            this.transform.localRotation = Quaternion.Slerp(this.transform.localRotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * rotationSpeed);
             pos.x += speed * Time.deltaTime;
         }
         if (Input.GetKey("a"))
         {
+            this.transform.localRotation = Quaternion.Slerp(this.transform.localRotation, Quaternion.Euler(0, -90, 0), Time.deltaTime * rotationSpeed);
             pos.x -= speed * Time.deltaTime;
         }
 
