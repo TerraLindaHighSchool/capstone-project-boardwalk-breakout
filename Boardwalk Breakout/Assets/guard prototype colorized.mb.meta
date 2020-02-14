@@ -1,16 +1,45 @@
 fileFormatVersion: 2
-guid: 1de44537669f9ba4baacbbe4b4d2f9c4
+guid: 098c378c59fac964a90e7d9095f0bfd2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert1
-    2100002: rampShader2
-    2100004: rampShader1
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: back
+    100002: //RootNode
+    100004: left
+    100006: pCube1
+    100008: pSphere1
+    100010: top1
+    100012: pSphere2
+    100014: transform1
+    100016: transform2
+    400000: back
+    400002: //RootNode
+    400004: left
+    400006: pCube1
+    400008: pSphere1
+    400010: top1
+    400012: pSphere2
+    400014: transform1
+    400016: transform2
+    2000000: back
+    2000002: left
+    2000004: top1
+    2100000: rampShader1
+    2100002: rampShader6
+    2100004: rampShader3
+    2100006: rampShader2
+    2100008: rampShader5
+    2100010: lambert1
+    2100012: rampShader4
+    2300000: pCube1
+    2300002: pSphere1
+    2300004: pSphere2
+    3300000: pCube1
+    3300002: pSphere1
+    3300004: pSphere2
     4300000: pCube1
+    4300002: pSphere1
+    4300004: pSphere2
   externalObjects: {}
   materials:
     importMaterials: 1
