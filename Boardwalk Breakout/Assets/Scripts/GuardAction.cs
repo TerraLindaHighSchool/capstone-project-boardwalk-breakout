@@ -10,23 +10,22 @@ public class GuardAction : MonoBehaviour
 
     private bool playerInSight;
     private bool playerInEarShot;
+    private float numOfFollowingPlushies;
 
     private NavMeshAgent navMeshAgent;
     private SphereCollider sphereCollider;
     private Animator currentPlayerAnimation;
     private GameObject player;
-    private GameObject[] plushies;
 
     
-    // Start is called before the first frame update
+    // Awake is called before the first frame update
     void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         sphereCollider = GetComponent<SphereCollider>();
         player = GameObject.Find("Player");
         currentPlayerAnimation = player.GetComponent<Animator>();
-        plushies = new GameObject[20];
-        // need to insert plushies into this array
+        // need to insert number of following plushies
     }
 
     // Update is called once per frame
@@ -63,7 +62,11 @@ public class GuardAction : MonoBehaviour
             }
 
             // Check to see if player is close enough to hear
-            if(CalculatePathLength(player.transform.position) <= HEAR_DISTANCE)
+            float noiseBeingMade = HEAR_DISTANCE / (numOfFollowingPlushies + 1);
+            // Should also add animation factor (more noise if walking, less if sneaking, less still if stationary)
+            // Get animator state
+            
+            if(CalculatePathLength(player.transform.position) <= noiseBeingMade)
             {
                 playerInEarShot = true;
             }
@@ -74,7 +77,7 @@ public class GuardAction : MonoBehaviour
         }
     }
 
-    // determines of guard is close enough to hear player
+    // Determines distance between player and guard
     private float CalculatePathLength(Vector3 targetPosition)
     {
         NavMeshPath path = new NavMeshPath();
