@@ -15,7 +15,6 @@ public class DoorOpenController : MonoBehaviour
 
     public GameObject hinge;
     private bool open;
-    private bool close;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,7 +29,6 @@ public class DoorOpenController : MonoBehaviour
         if (other.tag == "Guard")
         {
             open = false;
-            close = true;
         }
     }
 
@@ -47,10 +45,9 @@ public class DoorOpenController : MonoBehaviour
         {
             hinge.transform.localRotation = Quaternion.Slerp(hinge.transform.localRotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * 2);
         }
-        if(close)
+        if(!open)
         {
-            hinge.transform.localRotation = Quaternion.Slerp(hinge.transform.localRotation, Quaternion.Euler(0, -90, 0), Time.deltaTime * 2);
-            close = false;
+            hinge.transform.localRotation = Quaternion.Slerp(hinge.transform.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * 2);
         }
     }
 }
