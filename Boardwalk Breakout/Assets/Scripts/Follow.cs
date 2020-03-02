@@ -22,7 +22,7 @@ public class Follow : MonoBehaviour
             if (collision.gameObject == kid)
                 return;
         }
-        if (collision.gameObject.tag.Equals("Player"))
+        if (collision.gameObject.tag.Equals("Plushie"))
             kiddos.Add(collision.gameObject);
     }
 

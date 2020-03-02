@@ -27,11 +27,7 @@ public class Jump : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            //super jump
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
                     rb.AddForce(Vector3.up * thrust, ForceMode.Impulse);
-            }
         }
     }
 
