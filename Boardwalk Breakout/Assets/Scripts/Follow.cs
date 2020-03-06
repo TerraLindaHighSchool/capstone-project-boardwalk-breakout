@@ -30,7 +30,7 @@ public class Follow : MonoBehaviour
     {
         for(int z = 0; z < kiddos.Count; z++)
         {
-            kiddos[z].GetComponent<NavMeshAgent>().stoppingDistance = z + offset;
+            kiddos[z].GetComponent<NavMeshAgent>().stoppingDistance = offset;
             kiddos[z].GetComponent<NavMeshAgent>().SetDestination(player.transform.position);
         }
     }
