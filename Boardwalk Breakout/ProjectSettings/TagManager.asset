@@ -8,6 +8,7 @@ TagManager:
   - Object001
   - DoorButton
   - Plushie
+  - Guard
   layers:
   - Default
   - TransparentFX

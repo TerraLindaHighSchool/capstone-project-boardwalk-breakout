@@ -13,7 +13,7 @@ public class GuardAction : MonoBehaviour
     private float numOfFollowingPlushies;
 
     private NavMeshAgent navMeshAgent;
-    private SphereCollider sphereCollider;
+    private CapsuleCollider capsuleCollider;
     private Animator currentPlayerAnimation;
     private GameObject player;
 
@@ -22,7 +22,7 @@ public class GuardAction : MonoBehaviour
     void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        sphereCollider = GetComponent<SphereCollider>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
         player = GameObject.Find("Player");
         currentPlayerAnimation = player.GetComponent<Animator>();
         // need to insert number of following plushies
@@ -36,7 +36,7 @@ public class GuardAction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // check to see if guard triggered sphere collider around player
+        // check to see if guard triggered capsule collider around player
         if (other.gameObject == player)  // also need to add plushies
         {
             Vector3 direction = other.transform.position - this.transform.position;
@@ -48,7 +48,7 @@ public class GuardAction : MonoBehaviour
                 RaycastHit hit;
 
                 if (Physics.Raycast(transform.position + transform.up, direction.normalized,
-                                   out hit, sphereCollider.radius))
+                                   out hit, capsuleCollider.radius))
                 {
                     if(hit.collider.gameObject == player)
                     {
