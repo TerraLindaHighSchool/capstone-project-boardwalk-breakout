@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if (!GameObject.Find("Beam").GetComponent<GrabPlushie>().isDead && !GameObject.Find("Exit").GetComponent<Win>().isWin)
+       // if (!GameObject.Find("Beam").GetComponent<GrabPlushie>().isDead && !GameObject.Find("Exit").GetComponent<Win>().isWin)
         {
             if (Input.GetKey("w"))
             {
